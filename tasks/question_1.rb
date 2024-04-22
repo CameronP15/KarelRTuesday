@@ -87,4 +87,29 @@ class Question1 < UrRobot
     put_beeper
     turn_off
   end
+
+  def diamond_top
+    turn_left
+    move
+    pick_beeper
+    move
+    move
+    pick beeper
+    move
+    move
+    pick beeper
+    turn_right
+    move
+    turn_right
+    move
+    pick_beeper
+    move
+    move
+    pick_beeper
+    turn_left
+    move
+    turn_left
+    move
+    pick_beeper
+  end
 end
