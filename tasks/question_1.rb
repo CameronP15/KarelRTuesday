@@ -41,4 +41,50 @@ class Question1 < UrRobot
     move
     turn_right
   end
+
+  def reculer
+    turn_left
+    turn_left
+    move
+    turn_left
+    turn_left
+  end
+
+  def put_pins
+    move
+    put_beeper
+    move
+    turn_left
+    move
+    put_beeper
+    reculer
+    reculer
+    put_beeper
+    turn_right
+    move
+    turn_right
+    move
+    put_beeper
+    reculer
+    reculer
+    put_beeper
+    reculer
+    reculer
+    put_beeper
+    turn_left
+    move
+    turn_left
+    move
+    put_beeper
+    reculer
+    reculer
+    put_beeper
+    reculer
+    reculer
+    put_beeper
+    reculer 
+    reculer
+    put_beeper
+    turn_off
+  end
 end
