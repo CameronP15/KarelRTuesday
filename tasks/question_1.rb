@@ -85,31 +85,32 @@ class Question1 < UrRobot
     reculer 
     reculer
     put_beeper
-    turn_off
   end
 
   def diamond_top
+    turn_right
+    move
     turn_left
     move
-    pick_beeper
+    put_beeper
     move
     move
-    pick beeper
+    put_beeper
     move
     move
-    pick beeper
+    put_beeper
     turn_right
     move
     turn_right
     move
-    pick_beeper
+    put_beeper
     move
     move
-    pick_beeper
+    put_beeper
     turn_left
     move
     turn_left
     move
-    pick_beeper
+    put_beeper
   end
 end
