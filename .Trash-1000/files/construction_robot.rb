@@ -29,5 +29,6 @@ class Question1 < UrRobot
     move
     move
     move
+    move
 end
 end

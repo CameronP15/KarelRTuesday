@@ -50,6 +50,32 @@ class Question1 < UrRobot
     turn_left
   end
 
+  def move_10
+    move
+    move
+    move
+    move
+    move
+    move
+    move
+    move
+    move
+    move
+  end
+
+  def clock
+    move
+    move
+    move
+    move
+    put_beeper
+    move
+    move
+    move
+    move
+    move
+  end
+
   def put_pins
     move
     put_beeper
