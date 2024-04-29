@@ -5,9 +5,9 @@
 require_relative "../karel/ur_robot"
 require_relative "../mixins/turner"
 # A class whose robots know how to sweep a short staircase of beepers
-class RobotFaceNorth < UrRobot
+class Robot1 < UrRobot
   include Turner
-  def initialize(1, 1, NORD, 1, couleur rouge)
+  def initialize (street, avenue, direction, beepers)
     super(street, avenue, direction, beepers)
   end
   
