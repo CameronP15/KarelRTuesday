@@ -12,16 +12,16 @@ require_relative "../karel/robota"
 
 def task()
   
-  karel = HRobot.new(7, 2, Robota::SOUTH, 50)
-  karel = h
-  karel = ERobot.new(7, 9, Robota::WEST, 50)
-  karel = e
-  karel = LRobot.new(7, 11, Robota::SOUTH, 50)
-  karel = l
-  karel = LRobot.new(7, 15, Robota::SOUTH, 50)
-  karel = l
-  karel = ORobot.new(7, 19, Robota::SOUTH, 50)
-  karel = o
+  karel = HRobot.new(2, 7, Robota::SOUTH, 50)
+  karel.h
+  karel = ERobot.new(9, 7, Robota::WEST, 50)
+  karel.e
+  karel = LRobot.new(11, 7, Robota::SOUTH, 50)
+  karel.l
+  karel = LRobot.new(15, 7, Robota::SOUTH, 50)
+  karel.l
+  karel = ORobot.new(19, 7, Robota::SOUTH, 50)
+  karel.o
 end
 
 if __FILE__ == $0
