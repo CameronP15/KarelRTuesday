@@ -12,33 +12,24 @@ class T10Robot < UrRobot
   end
   
   # climb one stair
+  def next_row
+    turn_left
+    move
+    turn_left
+  end
+
   def turn_right
     turn_left
     turn_left
     turn_left
   end
 
-  def move_4
-    move
-    move
-    move
-    move
-  end
-
-  def move_8
-    move_4
-    move_4
-  end
-
-  def next_row_r
+  def next_row_2
     turn_right
     move
     turn_right
   end
 
-  def next_row_l
-    turn_left
-    move
-    turn_left
-  end
+  def move_9
+    
 end
