@@ -29,6 +29,9 @@ class SomRobot < UrRobot
     unless karel.front_is_clear?
         karel_turn_around_left
     end
+    if karel.facing_east?
+        
+    end
   end
 
   def sweep_move
