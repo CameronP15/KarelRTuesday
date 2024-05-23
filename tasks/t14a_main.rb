@@ -4,24 +4,19 @@
 
 $graphical = true
 
-require_relative "stair_sweeper"
+require_relative "t14a_robot"
 require_relative "../karel/robota"
 
 # a task for a stair sweeper
 def task()
-  world = Robota::World
-  world.read_world("../worlds/stair_world.txt")
-  
-  karel = StairSweeper.new(1, 1, Robota::EAST, 5)
-  karel.sweep_stairs()
-  world.show_world_with_robots(1, 1, 6, 6)
-  karel.display()
+  karel = T14aRobot.new(1, 1, Robota::EAST, 5)
+karel.move
   
 end
 
 if __FILE__ == $0
   if $graphical
-     screen = window(40, 40) # (size, speed)
+     screen = window(11, 40) # (size, speed)
      screen.run do
        task
      end

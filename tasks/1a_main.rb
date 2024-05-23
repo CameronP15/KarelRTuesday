@@ -4,24 +4,23 @@
 
 $graphical = true
 
-require_relative "stair_sweeper"
+require_relative "som_robot"
 require_relative "../karel/robota"
+require_relative "../mixins/sensor_pack"
 
 # a task for a stair sweeper
 def task()
   world = Robota::World
-  world.read_world("../worlds/stair_world.txt")
+  world.read_world("../worlds/rectangle.kwld")
   
-  karel = StairSweeper.new(1, 1, Robota::EAST, 5)
-  karel.sweep_stairs()
-  world.show_world_with_robots(1, 1, 6, 6)
-  karel.display()
+  karel = SomRobot.new(2, 2, Robota::EAST, INFINITY)
+  karel.sweep_move
   
 end
 
 if __FILE__ == $0
   if $graphical
-     screen = window(40, 40) # (size, speed)
+     screen = window(20, 40) # (size, speed)
      screen.run do
        task
      end
