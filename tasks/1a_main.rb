@@ -5,6 +5,7 @@
 $graphical = true
 
 require_relative "som_robot"
+require_relative "som_robot_2"
 require_relative "../karel/robota"
 require_relative "../mixins/sensor_pack"
 
@@ -14,8 +15,7 @@ def task()
   world.read_world("../worlds/rectangle.kwld")
   
   karel = SomRobot.new(2, 2, Robota::EAST, INFINITY)
-  karel.sweep_move
-  
+  karel.sweep
 end
 
 if __FILE__ == $0

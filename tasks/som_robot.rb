@@ -19,34 +19,42 @@ class SomRobot < UrRobot
     turn_left
   end
 
+  def maze
+    move
+    unless karel.front_is_clear
+        turn_left
+        if karel.front_is_clear
+            move
+        end
+    end
+    if karel.next_to_a_beeper
+        pick_beeper        
+    end
+  end
+
+
   def sweep
-    if karel.next_to_a_beeper?
-        karel.pick_beeper
+    super
+    while karel.front_is_clear
+        if karel.next_to_a_beeper
+            pick_beeper
+        end
+        unless karel.next_to_a_beeper
+            karel.pick_beeper
+        end
+        move
     end
-    unless karel.next_to_a_beeper?
-        karel.put_beeper
+    while !karel.front_is_clear
+        if karel.facing_east
+            turn_left
+            move
+            turn_left
+        end
+        if karel.facing_west
+            turn_right
+            move
+            turn_right
+        end
     end
-    unless karel.front_is_clear?
-        karel_turn_around_left
-    end
-    if karel.facing_east?
-        
-    end
-  end
-
-  def sweep_move
-    sweep
-    move
-  end
-
-  def swap
-    super()
-    sweep_move
-  end
-
-  def turn_around_left
-    turn_left
-    move
-    turn_left
   end
 end

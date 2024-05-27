@@ -4,17 +4,15 @@
 
 $graphical = true
 
-require_relative "stair_sweeper"
+require_relative "som_robot"
 require_relative "../karel/robota"
 
 # a task for a stair sweeper
 def task()
   world = Robota::World
-  world.read_world("../karel/sommative_t2")
+  world.read_world("../karel/sommative_problem")
   
-  karel = SomRobot.new(5, 3, Robota::EAST, 0)
-  karel.move
-  karel.move
+  karel = SomRobot.new(10, 7, Robota::NORTH, 0)
 end
 
 if __FILE__ == $0
