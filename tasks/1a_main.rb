@@ -5,7 +5,6 @@
 $graphical = true
 
 require_relative "som_robot"
-require_relative "som_robot_2"
 require_relative "../karel/robota"
 require_relative "../mixins/sensor_pack"
 

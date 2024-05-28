@@ -20,14 +20,12 @@ class SomRobot < UrRobot
   end
 
   def maze
+    super
     move
     unless karel.front_is_clear
         turn_left
-        if karel.front_is_clear
-            move
-        end
     end
-    if karel.next_to_a_beeper
+    if karel.next_to_a_beeper?
         pick_beeper        
     end
   end
@@ -35,22 +33,22 @@ class SomRobot < UrRobot
 
   def sweep
     super
-    while karel.front_is_clear
-        if karel.next_to_a_beeper
+    while karel.front_is_clear?
+        if karel.next_to_a_beeper?
             pick_beeper
         end
-        unless karel.next_to_a_beeper
-            karel.pick_beeper
+        unless karel.next_to_a_beeper?
+            karel.put_beeper
         end
         move
     end
-    while !karel.front_is_clear
-        if karel.facing_east
+    unless karel.front_is_clear?
+        if karel.facing_east?
             turn_left
             move
             turn_left
         end
-        if karel.facing_west
+        if karel.facing_west?
             turn_right
             move
             turn_right
