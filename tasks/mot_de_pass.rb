@@ -27,3 +27,5 @@ utilisateurs = {
   "user20" => "password20"
 }
 
+puts "nom de user"
+puts "mot de pass"
