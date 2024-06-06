@@ -4,5 +4,8 @@
 
 $graphical = true
 
-puts ”Donnez une valeur en seconds. 0 pour quitter”
+notes = Array.new(200) { rand(20..100) }
 
+def moyenne
+  Array/Array*100
+end
