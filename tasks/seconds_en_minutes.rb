@@ -4,5 +4,10 @@
 
 $graphical = true
 
-puts ”Donnez une valeur en seconds. 0 pour quitter”
+puts "donnez un valeur en seconds:"
+seconds = gets.to_i
 
+minutes = seconds / 60
+remaining_seconds = seconds % 60
+
+puts "#{seconds} seconds est egal a #{minutes} minute et #{remaining_seconds} seconds"
