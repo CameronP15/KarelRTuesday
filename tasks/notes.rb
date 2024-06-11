@@ -6,8 +6,7 @@ $graphical = true
 
 notes = Array.new(200) { rand(20..100) }
 
-def moyenne
-  Array/Array*100
-end
+sum = notes.sum 
+average = sum.to_f / notes.size
 
-puts "moyenne"
+puts "Le note moyenne est #{average.round(2)}"
