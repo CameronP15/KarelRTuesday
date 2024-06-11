@@ -6,6 +6,6 @@ $graphical = true
 
 valeurs = Array.new(200) { rand(0..100) }
 
-if Array=nombre pair
-	Array.sum
-end
+sum_even = valeurs.select { |num| num.even? }.sum
+
+puts "La moyenne de les nombre pair est #{sum_even}"
