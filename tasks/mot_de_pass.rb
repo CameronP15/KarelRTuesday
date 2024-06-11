@@ -27,11 +27,14 @@ utilisateurs = {
   "user20" => "password20"
 }
 
-puts "nom de user"
-puts "mot de pass"
+puts "nom dutilisateur:"
+username = gets.chomp
 
-if keys = values
-	puts "welcome"
+puts "mot de pass:"
+password = gets.chomp
+
+if utilisateurs.key?(username) && utilisateurs[username] == password
+	puts "ACESS GRANTED"
 else
-	puts "error"
+	puts "INVALID USERNAME OR PASSWORD"
 end
