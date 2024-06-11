@@ -29,3 +29,9 @@ utilisateurs = {
 
 puts "nom de user"
 puts "mot de pass"
+
+if keys = values
+	puts "welcome"
+else
+	puts "error"
+end

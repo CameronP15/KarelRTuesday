@@ -8,6 +8,7 @@ require_relative "../mixins/sensor_pack"
 # A class whose robots know how to sweep a short staircase of beepers
 class SomRobot < UrRobot
   include Turner
+  include SensorPack
   def initialize (street, avenue, direction, beepers)
     super(street, avenue, direction, beepers)
   end
@@ -20,35 +21,33 @@ class SomRobot < UrRobot
   end
 
   def maze
-    super
     move
-    unless karel.front_is_clear
+    unless front_is_clear?
         turn_left
     end
-    if karel.next_to_a_beeper?
+    if next_to_a_beeper?
         pick_beeper        
     end
   end
 
 
   def sweep
-    super
-    while karel.front_is_clear?
-        if karel.next_to_a_beeper?
+    while front_is_clear?
+        if next_to_a_beeper?
             pick_beeper
         end
-        unless karel.next_to_a_beeper?
-            karel.put_beeper
+        unless next_to_a_beeper?
+            put_beeper
         end
         move
     end
-    unless karel.front_is_clear?
-        if karel.facing_east?
+    unless front_is_clear?
+        if facing_east?
             turn_left
             move
             turn_left
         end
-        if karel.facing_west?
+        if facing_west?
             turn_right
             move
             turn_right

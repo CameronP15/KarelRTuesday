@@ -4,10 +4,8 @@
 
 $graphical = true
 
-notes = Array.new(200) { rand(20..100) }
+valeurs = Array.new(200) { rand(0..100) }
 
-def moyenne
-  Array/Array*100
+if Array=nombre pair
+	Array.sum
 end
-
-puts "moyenne"
