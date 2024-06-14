@@ -14,12 +14,12 @@ def task()
   world.read_world("../worlds/rectangle.kwld")
   
   karel = SomRobot.new(2, 2, Robota::EAST, INFINITY)
-  karel.sweep
+  karel.switch
 end
 
 if __FILE__ == $0
   if $graphical
-     screen = window(20, 40) # (size, speed)
+     screen = window(20, 100) # (size, speed)
      screen.run do
        task
      end

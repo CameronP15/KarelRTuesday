@@ -12,46 +12,39 @@ class SomRobot < UrRobot
   def initialize (street, avenue, direction, beepers)
     super(street, avenue, direction, beepers)
   end
-  
-  # climb one stair
+
+  def next_table
+      
+  end
+
   def turn_right
-    turn_left
-    turn_left
-    turn_left
+      turn_left
+      turn_left
+      turn_left
   end
-
-  def maze
-    move
-    unless front_is_clear?
-        turn_left
-    end
+  
+  def switch
+    while true
     if next_to_a_beeper?
-        pick_beeper        
+        pick_beeper
+    else
+        put_beeper
     end
-  end
-
-
-  def sweep
-    while front_is_clear?
-        if next_to_a_beeper?
-            pick_beeper
-        end
-        unless next_to_a_beeper?
-            put_beeper
-        end
+    if front_is_clear?
         move
-    end
-    unless front_is_clear?
+    else
         if facing_east?
             turn_left
             move
             turn_left
-        end
-        if facing_west?
+        else
             turn_right
             move
             turn_right
         end
+        
     end
+    end
+
   end
 end
